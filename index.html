@@ -3,85 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的自我介紹</title>
+    <title>徐翊維 | Hsu Yi-Wei Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;900&display=swap" rel="stylesheet">
     <style>
-        /* 基礎樣式設計 */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+
         body {
-            font-family: "Microsoft JhengHei", sans-serif;
-            line-height: 1.6;
+            font-family: 'Noto Sans TC', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background: #f8f9fa;
+            color: #2d3436;
+            background-image: radial-gradient(at 0% 0%, rgba(102, 126, 234, 0.15) 0, transparent 50%), 
+                              radial-gradient(at 100% 100%, rgba(118, 75, 162, 0.15) 0, transparent 50%);
+            min-height: 100vh;
         }
+
+        /* 頂部英雄區 */
         header {
-            background: #2c3e50;
-            color: #fff;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        h2 { border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
-        .skills span {
-            display: inline-block;
-            background: #3498db;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--primary-gradient);
             color: white;
-            padding: 5px 12px;
-            margin: 5px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            clip-path: ellipse(120% 100% at 50% 0%);
+            text-align: center;
+            padding: 0 20px;
         }
-        footer { text-align: center; padding: 20px; color: #777; }
-    </style>
-</head>
-<body>
 
-    <header>
-        <h1>你好，我是 [你的名字]</h1>
-        <p>熱衷於學習新技術的開發者 / 學生</p>
-    </header>
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 5px;
+            font-weight: 900;
+        }
 
-    <div class="container">
-        <section id="about">
-            <h2>關於我</h2>
-            <p>在這裡寫下一段簡單的自我介紹。例如你的興趣、目前的學習目標，或是你的職業背景。</p>
-        </section>
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
 
-        <section id="skills">
-            <h2>技能專長</h2>
-            <div class="skills">
-                <span>HTML / CSS</span>
-                <span>JavaScript</span>
-                <span>Python</span>
-                <span>Git / GitHub</span>
-            </div>
-        </section>
+        /* 內容容器 */
+        .container {
+            max-width: 900px;
+            margin: -100px auto 50px;
+            padding: 0 20px;
+        }
 
-        <section id="projects">
-            <h2>個人專案</h2>
-            <ul>
-                <li><strong>專案名稱 A</strong> - 簡單描述這個專案解決了什麼問題。</li>
-                <li><strong>專案名稱 B</strong> - 使用了什麼技術棧。</li>
-            </ul>
-        </section>
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
 
-        <section id="contact">
-            <h2>聯絡方式</h2>
-            <p>Email: your-email@example.com</p>
-            <p>GitHub: <a href="https://github.com/你的帳號">github.com/你的帳號</a></p>
-        </section>
-    </div>
+        h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
 
-    <footer>
-        &copy; 2025 [你的名字]. Built with HTML & CSS.
-    </footer>
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+            margin-left: 20px;
+        }
 
-</body>
-</html>
+        /* 技能標籤設計 */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+            border: 1px solid #f0f0f0;
+            font-weight: 500;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            color: #667eea;
+            border-color: #667eea;
+        }
+
+        .intro-text {
+            font-size: 1
