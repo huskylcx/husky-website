@@ -7,132 +7,147 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --glass: rgba(255, 255, 255, 0.8);
+            --primary-gradient: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            --glass: rgba(255, 255, 255, 0.85);
+            --ps-color: #31a8ff;
+            --ai-color: #ff9a00;
+            --id-color: #ff3366;
+            --pr-color: #ea77ff;
+            --lr-color: #31a8ff;
+            --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
 
         body {
             font-family: 'Noto Sans TC', sans-serif;
             margin: 0;
-            background: #f8f9fa;
+            background: #f0f2f5;
             color: #2d3436;
-            background-image: radial-gradient(at 0% 0%, rgba(102, 126, 234, 0.15) 0, transparent 50%), 
-                              radial-gradient(at 100% 100%, rgba(118, 75, 162, 0.15) 0, transparent 50%);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(76, 161, 175, 0.1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, rgba(44, 62, 80, 0.1) 0, transparent 50%);
             min-height: 100vh;
         }
 
-        /* 頂部英雄區 */
         header {
-            height: 60vh;
+            height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background: var(--primary-gradient);
             color: white;
-            clip-path: ellipse(120% 100% at 50% 0%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
             text-align: center;
             padding: 0 20px;
         }
 
         header h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin: 0;
-            letter-spacing: 5px;
+            letter-spacing: 8px;
             font-weight: 900;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            margin-top: 10px;
             opacity: 0.9;
             font-weight: 300;
+            letter-spacing: 2px;
         }
 
-        /* 內容容器 */
         .container {
-            max-width: 900px;
-            margin: -100px auto 50px;
+            max-width: 850px;
+            margin: -60px auto 50px;
             padding: 0 20px;
         }
 
         .card {
             background: var(--glass);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
             margin-bottom: 30px;
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.4);
         }
 
         h2 {
-            color: #667eea;
-            font-size: 1.8rem;
+            color: #2c3e50;
+            font-size: 1.6rem;
             margin-top: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        h2::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #eee;
-            margin-left: 20px;
-        }
-
-        /* 技能標籤設計 */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .skill-item {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            transition: transform 0.3s ease;
-            border: 1px solid #f0f0f0;
-            font-weight: 500;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px);
-            color: #667eea;
-            border-color: #667eea;
+            border-left: 5px solid #4ca1af;
+            padding-left: 15px;
+            margin-bottom: 25px;
         }
 
         .intro-text {
-            font-size: 1.1rem;
-            line-height: 2;
-            color: #4a4a4a;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444;
         }
 
-        .location-tag {
-            display: inline-block;
-            background: #e1e5ff;
-            color: #5a67d8;
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 12px;
         }
+
+        .skill-item {
+            background: #fff;
+            padding: 12px;
+            text-align: center;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border-bottom: 3px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover { transform: translateY(-5px); }
+        .ps { border-color: var(--ps-color); color: var(--ps-color); }
+        .ai { border-color: var(--ai-color); color: var(--ai-color); }
+        .id { border-color: var(--id-color); color: var(--id-color); }
+        .pr { border-color: var(--pr-color); color: var(--pr-color); }
+        .lr { border-color: var(--lr-color); color: var(--lr-color); }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            width: 280px;
+            padding: 12px 0;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        .email-btn { background: #2c3e50; }
+        .email-btn:hover { background: #4ca1af; transform: scale(1.05); }
+
+        .ig-btn { background: var(--ig-gradient); }
+        .ig-btn:hover { opacity: 0.9; transform: scale(1.05); }
 
         footer {
             text-align: center;
-            padding: 40px;
-            color: #a0aec0;
-            font-size: 0.9rem;
+            padding: 30px;
+            color: #999;
+            font-size: 0.85rem;
         }
 
-        /* 手機版調整 */
         @media (max-width: 600px) {
-            header h1 { font-size: 2.5rem; }
-            .container { margin-top: -50px; }
+            header h1 { font-size: 2.2rem; }
+            .container { margin-top: -40px; }
         }
     </style>
 </head>
@@ -140,41 +155,42 @@
 
     <header>
         <h1>徐翊維</h1>
-        <p>Designer & Illustrator</p>
+        <p>DESIGNER & ILLUSTRATOR</p>
     </header>
 
     <div class="container">
         <section class="card">
-            <span class="location-tag">📍 來自新北市</span>
-            <h2>關於我</h2>
+            <h2>關於我 / About</h2>
             <div class="intro-text">
-                我是<strong>徐翊維</strong>，目前就讀於<strong>銘傳大學商業設計系三年級</strong>。
-                我熱衷於將複雜的概念轉化為具備美感的視覺語言。身為一名設計師，我追求邏輯與排版的嚴謹；
-                身為一名兼職插畫家，我喜歡在作品中加入感性與獨特的線條。
+                我來自<strong>新北市</strong>，目前是<strong>銘傳大學商業設計系三年級</strong>的學生。<br>
+                在設計的領域中，我遊走於理性與感性之間。我是一名注重排版邏輯的<strong>設計師</strong>，
+                同時也是一位追求獨特視覺張力的<strong>兼職插畫家</strong>。
             </div>
         </section>
 
         <section class="card">
-            <h2>設計工具</h2>
+            <h2>專業技能 / Skills</h2>
             <div class="skills-grid">
-                <div class="skill-item">Adobe Ai</div>
-                <div class="skill-item">Adobe Id</div>
-                <div class="skill-item">Adobe Ps</div>
-                <div class="skill-item">Adobe Pr</div>
-                <div class="skill-item">Adobe Lr</div>
+                <div class="skill-item ai">Adobe Ai</div>
+                <div class="skill-item id">Adobe Id</div>
+                <div class="skill-item ps">Adobe Ps</div>
+                <div class="skill-item pr">Adobe Pr</div>
+                <div class="skill-item lr">Adobe Lr</div>
             </div>
         </section>
 
-        <section class="card">
-            <h2>聯繫交流</h2>
-            <p>正在尋找實習機會或插畫合作，歡迎與我聯絡：</p>
-            <p style="font-weight: 500;">✉️ Email: your-email@example.com</p>
-            <p>🔗 Behance / Instagram: @your_id</p>
+        <section class="card" style="text-align: center;">
+            <h2>聯絡合作 / Contact</h2>
+            <p>如果您有任何設計需求或插畫合作，歡迎聯絡：</p>
+            <div class="btn-group">
+                <a href="mailto:andyhsu1115@hotmail.com" class="contact-link email-btn">✉️ andyhsu1115@hotmail.com</a>
+                <a href="https://www.instagram.com/hsu-husky1115" target="_blank" class="contact-link ig-btn">📸 Instagram: hsu-husky1115</a>
+            </div>
         </section>
     </div>
 
     <footer>
-        &copy; 2025 Hsu Yi-Wei. Designed with passion.
+        &copy; 2025 Hsu Yi-Wei. Crafted for Design Excellence.
     </footer>
 
 </body>
